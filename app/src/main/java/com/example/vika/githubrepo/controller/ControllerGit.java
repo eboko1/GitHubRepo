@@ -1,7 +1,6 @@
 package com.example.vika.githubrepo.controller;
 
-import com.example.vika.githubrepo.api.model.GitHubRepo;
-import com.example.vika.githubrepo.api.service.GitHubClient;
+import com.example.vika.githubrepo.service.GitHubClient;
 import com.example.vika.githubrepo.utils.Constants;
 
 import retrofit2.Retrofit;

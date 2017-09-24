@@ -8,10 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.vika.githubrepo.R;
-import com.example.vika.githubrepo.api.model.GitHubRepo;
+import com.example.vika.githubrepo.model.GitHubRepo;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 /**
  * Created by Vika on 24.09.2017.

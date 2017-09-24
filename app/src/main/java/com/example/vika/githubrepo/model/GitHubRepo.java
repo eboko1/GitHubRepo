@@ -1,4 +1,4 @@
-package com.example.vika.githubrepo.api.model;
+package com.example.vika.githubrepo.model;
 
 /**
  * Created by Vika on 24.09.2017.

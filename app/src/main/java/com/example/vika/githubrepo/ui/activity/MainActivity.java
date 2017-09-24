@@ -1,15 +1,17 @@
-package com.example.vika.githubrepo.ui;
+package com.example.vika.githubrepo.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.vika.githubrepo.R;
-import com.example.vika.githubrepo.api.model.GitHubRepo;
+import com.example.vika.githubrepo.model.GitHubRepo;
 import com.example.vika.githubrepo.controller.ControllerGit;
 import com.example.vika.githubrepo.ui.adapter.GitHubRestAdapter;
+import com.example.vika.githubrepo.utils.InternetConnection;
 
 import java.util.List;
 
@@ -18,20 +20,25 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String LOG = "MainActivity";
     private RecyclerView recyclerView;
     private GitHubRestAdapter gitHubRestAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(LOG, "onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-
         getApiData();
-
+     /*   if(InternetConnection.isInternetConnection(getApplicationContext())  == true) {
+            getApiData();
+        } else {
+           Toast.makeText(this, "error internet connection", Toast.LENGTH_LONG).show();
+        }*/
     }
 
     private void getApiData() {

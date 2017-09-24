@@ -1,6 +1,6 @@
-package com.example.vika.githubrepo.api.service;
+package com.example.vika.githubrepo.service;
 
-import com.example.vika.githubrepo.api.model.GitHubRepo;
+import com.example.vika.githubrepo.model.GitHubRepo;
 
 import java.util.List;
 
