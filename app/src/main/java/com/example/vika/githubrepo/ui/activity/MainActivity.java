@@ -34,15 +34,19 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         getApiData();
-     /*   if(InternetConnection.isInternetConnection(getApplicationContext())  == true) {
+     /*   if(InternetConnection.isInternetConnection(getApplicationContext()) ) {
+            Log.i(LOG, "connection inet " + InternetConnection.isInternetConnection(getApplicationContext()));
+            Toast.makeText(this,"inet successful ",Toast.LENGTH_LONG).show();
             getApiData();
         } else {
-           Toast.makeText(this, "error internet connection", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Please connection internet ",Toast.LENGTH_LONG).show();
+
         }*/
     }
 
     private void getApiData() {
-        Call<List<GitHubRepo>> call = ControllerGit.getApiClient().getAllData("eboko1");
+        String user = getString(R.string.user_repo);
+        Call<List<GitHubRepo>> call = ControllerGit.getApiClient().getAllData(user);
         call.enqueue(new Callback<List<GitHubRepo>>() {
             @Override
             public void onResponse(Call<List<GitHubRepo>> call, Response<List<GitHubRepo>> response) {
